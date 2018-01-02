@@ -1,0 +1,70 @@
+<template>
+  <view class="page">
+    <we-cells>
+      <we-input slot="default"/>
+    </we-cells>
+
+    <view class="weui-cells">
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">qq</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入qq"/>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class SurveyIndex extends wepy.page {
+    config = {
+      usingComponents: {
+        // 'weui-input': '../../components/weui/weui-input/dist/index',
+        // 'weui-cells': '../../components/weui/weui-cells/dist/index',
+        'we-cells': '../../components/weui/we-cells/index',
+        'we-input': '../../components/weui/we-input/index',
+      }
+    }
+
+    data = {
+      formData: {
+        weight: 50
+      },
+      weight: 50,
+      num: 11
+    }
+
+    computed = {
+      formDataJson() {
+        return JSON.stringify(this.formData)
+      }
+    }
+
+    watch = {
+      formData() {
+        console.log(this.formData)
+      }
+    }
+
+    methods = {
+      handleChangeWeight(e) {
+        this.formData.weight = e.detail.value
+      }
+    }
+
+    events = {}
+
+    onLoad() {
+    }
+
+    // Other properties
+  }
+</script>
+
+<style lang="less">
+  /** less **/
+</style>

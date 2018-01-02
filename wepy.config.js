@@ -1,6 +1,8 @@
 const path = require('path')
 const prod = process.env.NODE_ENV === 'production'
 
+console.log(path.join(__dirname, 'node_modules/weui-wxss'))
+
 module.exports = {
   wpyExt: '.wpy',
   eslint: true,
@@ -16,7 +18,9 @@ module.exports = {
     alias: {
       counter: path.join(__dirname, 'src/components/counter'),
       '@': path.join(__dirname, 'src'),
-      'src': path.join(__dirname, 'src')
+      'src': path.join(__dirname, 'src'),
+      'weui-wxss': path.join(__dirname, 'node_modules/weui-wxss'),
+      '~weui-wxss': path.join(__dirname, 'node_modules/weui-wxss')
     },
     modules: ['node_modules']
   },
